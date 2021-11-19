@@ -524,7 +524,12 @@ PSUCHATMODULE.loadJS = function() {
 
 PSUCHATMODULE.loadStyle = function() {
     var cStyle = document.createElement("style");
+    var faLink = document.createElement("link")
+
     cStyle.type = "text/css";
+    faLink.rel = "stylesheet";
+    faLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css";
+
     var strStyle = "div.chat_underbar {position: fixed;right:20px;bottom: 0px;height:0px;margin:0px;padding:0px;border:none;width:auto;overflow:hidden;z-index:250;}\n" +
     "div.chat_underbar div.chat_offerChat {width:300px;height:auto;margin:0px;padding:0px;border-width:0px;background-color:#ededee;text-align:center;}\n" +
     "div.chat_underbar div.chat_offerNoChat {width:300px;height:200px;margin:0px;padding:0px;background-color:#e86d1f;text-align:center;}\n" +
@@ -583,6 +588,7 @@ PSUCHATMODULE.loadStyle = function() {
             cStyle.innerHTML = strStyle;
         document.body.appendChild(cStyle);
     }
+    document.body.appendChild(faLink)
 }
 ;
 
