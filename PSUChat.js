@@ -13,7 +13,7 @@ PSUCHATMODULE.formExpand_noChat = 200;
 //ORG 128
 PSUCHATMODULE.formExpand_AddEmail = 220;
 //Expand Toaster for Email Message
-PSUCHATMODULE.formExpand_AddField = 316;
+PSUCHATMODULE.formExpand_AddField = 330;
 //Expand Toaster for Addtl Fields
 PSUCHATMODULE.headerExpand = 30;
 PSUCHATMODULE.forceheaderopenExpand = 30;
@@ -536,7 +536,7 @@ PSUCHATMODULE.loadStyle = function() {
     gfLink.href = "https://fonts.googleapis.com/css?family=Montserrat";
 
 
-    var strStyle = "div.chat_underbar {position:fixed;right:20px;bottom:0px;height:0px;margin:0px;padding:0px;border:none;width:auto;z-index:250;font-family:'Montserrat'}\n" +
+    var strStyle = "div.chat_underbar {position:fixed;right:20px;bottom:0px;height:0px;margin:0px;padding:0px;border:none;width:auto;z-index:250;font-family:'Montserrat';box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}\n" +
     "div.chat_underbar div.chat_offerChat {width:300px;height:auto;margin:0px;padding:0px;border-width:0px;background-color:#ededee;text-align:center;}\n" +
     "div.chat_underbar div.chat_offerNoChat {width:300px;height:200px;margin:0px;padding:0px;background-color:#e86d1f;text-align:center;}\n" +
     "div.chat_header {height:auto;color:#ededee;background-color:black;border:0px;padding:6px 14px;margin:0px;text-align:left;}\n" +
@@ -559,7 +559,7 @@ PSUCHATMODULE.loadStyle = function() {
     ".relshell {position:relative;}" +
     "i.fa-stop-circle {position:absolute;left:-1.33em;top:0.66em;font-size:14px;font-weight:600;color:red;display:none;}";
 
-    var strLongHeaderStyle = "div.chat_underbar {position: fixed;right:20px;bottom: 0px;height:0px;margin:0px;padding:0px;border:none;width:auto;z-index:250;font-family:'Montserrat'}\n" +
+    var strLongHeaderStyle = "div.chat_underbar {position: fixed;right:20px;bottom: 0px;height:0px;margin:0px;padding:0px;border:none;width:auto;z-index:250;font-family:'Montserrat'box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}\n" +
     "div.chat_underbar div.chat_offerChat {width:300px;height:auto;margin:0px;padding:0px;border-width:0px;background-color:#ededee;text-align:center;}\n" +
     "div.chat_underbar div.chat_offerNoChat {width:300px;height:200px;margin:0px;padding:0px;background-color:#e86d1f;text-align:center;}\n" +
     "div.chat_header {height:auto;color:#ededee;background-color:black;border:0px;padding:6px 14px;margin:0px;text-align:left;}\n" +
