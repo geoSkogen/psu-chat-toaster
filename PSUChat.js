@@ -5,7 +5,7 @@
 var PSUCHATMODULE = PSUCHATMODULE || {};
 
 PSUCHATMODULE.team = "";
-PSUCHATMODULE.formExpand_remodel = 80;
+PSUCHATMODULE.formExpand_remodel = 50;
 // ADM, FA.
 PSUCHATMODULE.formExpand = 205;
 //Normal Chat Toaster Form
@@ -536,7 +536,7 @@ PSUCHATMODULE.loadStyle = function() {
     gfLink.href = "https://fonts.googleapis.com/css?family=Montserrat";
 
 
-    var strStyle = "div.chat_underbar {position:fixed;right:20px;bottom:0px;height:0px;margin:0px;padding:0px;border:none;width:auto;overflow:hidden;z-index:250;font-family:'Montserrat'}\n" +
+    var strStyle = "div.chat_underbar {position:fixed;right:20px;bottom:0px;height:0px;margin:0px;padding:0px;border:none;width:auto;z-index:250;font-family:'Montserrat'}\n" +
     "div.chat_underbar div.chat_offerChat {width:300px;height:auto;margin:0px;padding:0px;border-width:0px;background-color:#ededee;text-align:center;}\n" +
     "div.chat_underbar div.chat_offerNoChat {width:300px;height:200px;margin:0px;padding:0px;background-color:#e86d1f;text-align:center;}\n" +
     "div.chat_header {height:auto;color:#ededee;background-color:black;border:0px;padding:6px 14px;margin:0px;text-align:left;}\n" +
@@ -547,7 +547,7 @@ PSUCHATMODULE.loadStyle = function() {
     "div.chat_offerChatForm {height:auto;background-color:#ededee;padding:20px 20px;text-align:left;color:black;}\n" +
     ".chat_controls {width:auto;clear:both;height:auto;}\n" +
     ".field_wrap {display:flex;flex-flow:row wrap;justify-content:center;margin:0 0 0.66em 0;}\n" +
-    ".chat_controls label{font-size:14px;color:#1d252d;display:block;float:none;width:auto;text-align:right;padding:0.33em 0.66em 0 0;margin-bottom:0;font-weight:600;min-width:90px;max-width:90px;}\n" +
+    ".chat_controls label{font-size:14px;color:#1d252d;display:block;float:none;width:auto;text-align:right;padding:0.33em 0.66em 0 0;margin-bottom:0;font-weight:600;min-width:95px;max-width:95px;}\n" +
     ".chat_controls select {height:2.33em;}\n" +
     ".chat_controls_inner { padding-top:3px;max-width:160px;min-width:160px; }\n" +
     ".chat_controls_invalid {border:solid 2px red;}\n" +
@@ -555,11 +555,11 @@ PSUCHATMODULE.loadStyle = function() {
     ".chat_req_asterisk {color:#1d252d;vertical-align:baselin;font-size:12px;}\n" +
     "input#btnStart2 {color:#ededee;font-weight:600;border-width:0px;background-color:#6a7f10;width:auto;font-size:14px;height:auto;padding:0.5em 1.75em;margin:2em 0;border-radius:0 0 0 0;}\n" +
     "input#btnStart2:hover {text-shadow: 0 0 15px #000000;text-decoration:none;}\n" +
-    "p#legend {font-size:13px;font-weight:500}" +
+    "div#legend {font-size:13px;font-weight:500}" +
     ".relshell {position:relative;}" +
     "i.fa-stop-circle {position:absolute;left:-1.33em;top:0.66em;font-size:14px;font-weight:600;color:red;display:none;}";
 
-    var strLongHeaderStyle = "div.chat_underbar {position: fixed;right:20px;bottom: 0px;height:0px;margin:0px;padding:0px;border:none;width:auto;overflow:hidden;z-index:250;font-family:'Montserrat'}\n" +
+    var strLongHeaderStyle = "div.chat_underbar {position: fixed;right:20px;bottom: 0px;height:0px;margin:0px;padding:0px;border:none;width:auto;z-index:250;font-family:'Montserrat'}\n" +
     "div.chat_underbar div.chat_offerChat {width:300px;height:auto;margin:0px;padding:0px;border-width:0px;background-color:#ededee;text-align:center;}\n" +
     "div.chat_underbar div.chat_offerNoChat {width:300px;height:200px;margin:0px;padding:0px;background-color:#e86d1f;text-align:center;}\n" +
     "div.chat_header {height:auto;color:#ededee;background-color:black;border:0px;padding:6px 14px;margin:0px;text-align:left;}\n" +
@@ -570,7 +570,7 @@ PSUCHATMODULE.loadStyle = function() {
     "div.chat_offerChatForm {height:auto;background-color:#ededee;padding:20px 20px;text-align:left;color:black;}\n" +
     ".chat_controls {width:auto;clear:both;height:auto;}\n" +
     ".field_wrap {display:flex;flex-flow:row wrap;justify-content:center;margin:0 0 0.66em 0;}\n" +
-    ".chat_controls label {font-size:14px;color:#1d252d;display:block;float:none;width:auto;text-align:right;padding:0.33em 0.66em 0 0;margin-bottom:0;font-weight:600;min-width:90px;max-width:90px;}\n" +
+    ".chat_controls label {font-size:14px;color:#1d252d;display:block;float:none;width:auto;text-align:right;padding:0.33em 0.66em 0 0;margin-bottom:0;font-weight:600;min-width:95px;max-width:95px;}\n" +
     ".chat_controls select {height:2.33em;}\n" +
     ".chat_controls_inner { padding-top:3px;max-width:160px;min-width:160px; }\n" +
     ".chat_controls_invalid {border:solid 2px red;}\n" +
@@ -578,7 +578,7 @@ PSUCHATMODULE.loadStyle = function() {
     ".chat_req_asterisk {color:#1d252d;vertical-align:baselin;font-size:12px;}\n" +
     "input#btnStart2 {color:#ededee;font-weight:600;border-width:0px;background-color:#6a7f10;width:auto;font-size:14px;height:auto;padding:0.5em 1.75em;margin:2em 0;border-radius:0 0 0 0;}\n" +
     "input#btnStart2:hover {text-shadow: 0 0 15px #000000;text-decoration:none;}\n" +
-    "p#legend {font-size:13px;font-weight:500}" +
+    "div#legend {font-size:13px;font-weight:500}" +
     ".relshell {position:relative;}" +
     "i.fa-stop-circle {position:absolute;left:-1.33em;top:0.66em;font-size:14px;font-weight:600;color:red;display:none;}";
 
@@ -754,7 +754,7 @@ PSUCHATMODULE.createChatElement = function() {
         "           <input type=\"hidden\" id=\"MediaID\" name=\"MediaID\" value=\"6\" />\n" +
         "			<div class=\"chat_controls\" style=\"text-align:center\">\n" +
         "				 <input class=\"\" id=\"btnStart2\"  type=\"button\" value=\"Start Chat\" onClick=\"PSUCHATMODULE.almostTriggerChat()\" />\n" +
-        "        <p id=\"legend\">*All fields are required</p>"
+        "        <div id=\"legend\">*All fields are required</div>"
         "				<input class=\"\" id=\"btnStart\" type=\"button\" style=\"display:none\" value=\"Start Chat\" onClick=\"triggerChat()\" />\n" +
         "				<input class=\"\" id=\"btnEstimate\" type=\"button\" style=\"display:none\" value=\"Estimate Chat\" onClick=\"\" />\n" +
           (PSUCHATMODULE.emailText ?
