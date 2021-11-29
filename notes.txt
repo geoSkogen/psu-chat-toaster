@@ -1,0 +1,121 @@
+
+//top
+PSUCHATMODULE.formExpand_remodelOffset = 50;
+
+PSUCHATMODULE.formExpand_AddField = 330;
+
+
+
+
+/*
+load team settings
+*/
+PSUCHATMODULE.formExpand += PSUCHATMODULE.formExpand_remodelOffset;
+
+
+
+
+/*
+
+showChatUnderbar
+*/
+
+this.toggleFieldsTabIndex(false);
+this.toggleModalAriaLabel(false);
+// . . .
+this.toggleFieldsTabIndex(true);
+this.toggleModalAriaLabel(true);
+
+
+
+
+/*
+loadStyle
+*/
+
+var faLink = document.createElement("link");
+var gfLink = document.createElement("link");
+
+faLink.rel = "stylesheet";
+faLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css";
+
+gfLink.rel = "stylesheet"
+gfLink.href = "https://fonts.googleapis.com/css?family=Montserrat";
+
+// . . .
+document.body.appendChild(faLink)
+document.body.appendChild(gfLink)
+
+
+
+
+/*
+validateFields
+*/
+
+// . . .
+
+
+
+
+
+/*
+add 3 methods following validateFields definition
+*/
+PSUCHATMODULE.toggleModalAriaLabel = function (bool) {
+  let stateLabels = ['Expand','Collapse'];
+  let ariaText = $('.chat_headerText')[0] ?
+    $('.chat_headerText')[0].innerText.replace('Chat with ','') : '';
+
+  if (bool) { stateLabels.reverse() };
+
+  if ($('.chat_close a')[0]) {
+    $('.chat_close a')[0].setAttribute(
+      'aria-label',
+      (stateLabels[0] + ' ' + ariaText + ' Chat Modal')
+    );
+    $('.chat_close a')[0].setAttribute('aria-expanded', bool.toString());
+  }
+}
+
+PSUCHATMODULE.toggleFieldsTabIndex = function (bool) {
+  let thisIndex = bool ? '0' : '-1';
+  PSUCHATMODULE.tabbedInputs.forEach( (tabbed_input) => {
+    tabbed_input.setAttribute('tabindex', thisIndex);
+  })
+}
+
+PSUCHATMODULE.getRenderedHeaderHeight = function () {
+  const chat_header = $('.chat_header')[0]
+  const chat_header_styles = (chat_header) ? window.getComputedStyle( chat_header ) : null
+  const chat_header_height = (chat_header) ? chat_header_styles.getPropertyValue('height') : 30
+  return chat_header_height
+}
+
+
+
+
+/*
+following DOM getRender
+*/
+
+PSUCHATMODULE.tabbedInputs = [];
+let button_ids = ['btnStart', 'btnStart2', 'btnEstimate']
+
+document.querySelectorAll('.chat_underbarInput').forEach( (input_el) => {
+  PSUCHATMODULE.tabbedInputs.push(input_el);
+})
+
+for (let i = 0; i < button_ids.length; i++) {
+  if ( document.querySelector('#' + button_ids[i]) ) {
+    PSUCHATMODULE.tabbedInputs.push(
+      document.querySelector('#' + button_ids[i])
+    );
+  }
+}
+
+PSUCHATMODULE.toggleFieldsTabIndex(false);
+
+PSUCHATMODULE.toggleModalAriaLabel(false);
+
+PSUCHATMODULE.headerExpand = PSUCHATMODULE.getRenderedHeaderHeight() + (PSUCHATMODULE.getRenderedHeaderHeight()/10)

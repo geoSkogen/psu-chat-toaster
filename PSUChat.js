@@ -718,10 +718,22 @@ PSUCHATMODULE.createChatElement = function() {
         "       <div class=\"relshell\"><i id=\"Email-err-icon\" class=\"fas fa-stop-circle\"></i></div>\n" +
         "			</div>\n" +
           (PSUCHATMODULE.showSBGradField ?
+        "			<div class=\"chat_controls field_wrap\">\n" +
+        "				<label for=\"SBType\" >Current student status:</label>\n" +
+        "				<div class=\"chat_controls_inner\">\n" +
+        "<select id=\"SBType\">\n" +
+        "<option value=\"o\">--</option>\n" +
+        "<option value=\"1\">Future student</option>\n" +
+        "<option value=\"2\">Current student</option>\n" +
+        "<option value=\"3\">Graduate/Alumni</option>\n" +
+        "<option value=\"4\">Other</option>\n" +
+        "</select>\n" +
+        "				</div>\n" +
+        "			</div>\n" +
         "           <div class=\"chat_controls field_wrap\">\n" +
         "				<label for=\"SBMajor\" >Program of Interest:</label>\n" +
         "				<div class=\"chat_controls_inner\">\n" +
-        "<select style=\"width: 150px;\"  id=\"SBMajor\">\n" +
+        "<select id=\"SBMajor\">\n" +
         "<option value=\"o\">--</option>\n" +
         "<option value=\"MRED-RED\">Master of Real Estate Development</option>\n" +
         "<option value=\"MS-FNC\">Master of Science in Finance</option>\n" +
@@ -732,18 +744,6 @@ PSUCHATMODULE.createChatElement = function() {
         "<option value=\"CRTGR-GCBB\">Business Blockchain Certificate</option>\n" +
         "<option value=\"CRTGR-GCTX\">Taxation Certificate</option>\n" +
         "<option value=\"audi\">Athletic and Outdoor Certificate</option>\n" +
-        "</select>\n" +
-        "				</div>\n" +
-        "			</div>\n" +
-        "			<div class=\"chat_controls field_wrap\">\n" +
-        "				<label for=\"SBType\" >Current student status:</label>\n" +
-        "				<div class=\"chat_controls_inner\">\n" +
-        "<select style=\"width: 150px;\"  id=\"SBType\">\n" +
-        "<option value=\"o\">--</option>\n" +
-        "<option value=\"1\">Future student</option>\n" +
-        "<option value=\"2\">Current student</option>\n" +
-        "<option value=\"3\">Graduate/Alumni</option>\n" +
-        "<option value=\"4\">Other</option>\n" +
         "</select>\n" +
         "				</div>\n" +
         "			</div>\n" : "") +
