@@ -10,7 +10,7 @@ PSUCHATMODULE.formExpand_noChat = 220;// changed from 128 -- D8 change
 PSUCHATMODULE.formExpand_AddEmail = 220; //Expand Toaster for Email Message
 PSUCHATMODULE.formExpand_AddField = 300; //Expand Toaster for Addtl Fields
 
-PSUCHATMODULE.formExpand_remodelOffset = 50;
+PSUCHATMODULE.formExpand_remodelOffset = 60;
 
 PSUCHATMODULE.headerExpand = 30;
 PSUCHATMODULE.forceheaderopenExpand = 30;
