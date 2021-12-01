@@ -30,6 +30,7 @@ PSUCHATMODULE.showSBGradField = false;
 PSUCHATMODULE.chatteamactive = true;
 PSUCHATMODULE.validatePage = false;  // if true, the current page must be in the validPages array or no chat code will be enabled.
 PSUCHATMODULE.validPages = [];
+PSUCHATMODULE.unrequiredFields = [];
 
 
 PSUCHATMODULE.FAPages = [
@@ -537,7 +538,10 @@ PSUCHATMODULE.loadTeamSettings = function(theTeam)
  PSUCHATMODULE.timerURL = theTeam.timerURL;
  PSUCHATMODULE.emailText = theTeam.emailText;
 
- if (PSUCHATMODULE.showIDField) PSUCHATMODULE.formExpand = PSUCHATMODULE.formExpand_AddField;
+ if (PSUCHATMODULE.showIDField) {
+   PSUCHATMODULE.formExpand = PSUCHATMODULE.formExpand_AddField;
+   PSUCHATMODULE.unrequiredFields.push('PSUID')
+ }
 
  if (PSUCHATMODULE.showSBGradField) PSUCHATMODULE.formExpand = PSUCHATMODULE.formExpand_AddField;
 
@@ -710,13 +714,16 @@ PSUCHATMODULE.validateFields = function() {
 
  $(".chat_underbarInput").each(function(index)
  {
-   if ($(this).val().trim() == "")
+   if ($(this).val().trim() == "" && PSUCHATMODULE.unrequiredFields.indexOf(this.id)==-1)
    {
      allowSubmit = false;
      $(this).addClass("chat_controls_invalid");
 
      $('#' + this.id + '-err-icon').css('display','block');
 
+     if ($('.req')[index]) {
+       $('.req')[index].setAttribute( 'aria-label', $('.req')[index].textContent.replace('*','') + ' is required.');
+     }
    }
    else
    {
@@ -724,6 +731,9 @@ PSUCHATMODULE.validateFields = function() {
 
      $('#' + this.id + '-err-icon').css('display','none');
 
+     if ($('.req')[index]) {
+       $('.req')[index].removeAttribute('aria-label')
+     }
    }
  });
 
@@ -734,7 +744,7 @@ PSUCHATMODULE.validateFields = function() {
 PSUCHATMODULE.toggleModalAriaLabel = function (bool) {
   let stateLabels = ['Expand','Collapse'];
   let ariaText = $('.chat_headerText')[0] ?
-    $('.chat_headerText')[0].innerText.replace('Chat with ','') : '';
+    $('.chat_headerText')[0].textContent.replace('Chat with ','') : '';
 
   if (bool) { stateLabels.reverse() };
 
@@ -744,6 +754,7 @@ PSUCHATMODULE.toggleModalAriaLabel = function (bool) {
       (stateLabels[0] + ' ' + ariaText + ' Chat Modal')
     );
     $('.chat_close a').attr('aria-expanded', bool.toString());
+    $('.chat_headerText').attr('aria-expanded', bool.toString());
   }
 };
 

@@ -28,6 +28,22 @@
   PSUCHATMODULE.forceOnHours = true;
   PSUCHATMODULE.init();
   });
+  $('body').keyup(function (e) {
+      var code = e.keyCode || e.which;
+      if (code == '9') {
+        $('.focused-element').each(function () {
+          $(this).removeClass('focused-element');
+        });
+        $(':focus').addClass('focused-element');
+      }
+      $(document).on('click', function (event) {
+        if (!(event.target.classList.contains('focused-element'))) {
+          $('.focused-element').each(function () {
+            $(this).removeClass('focused-element');
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
