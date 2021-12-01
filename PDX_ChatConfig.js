@@ -621,6 +621,7 @@ PSUCHATMODULE.showChatUnderbar = function() {
    $("#chat_icon_close").css("display","none");
    $(".chat_underbarInput").val("");
 
+   this.toggleFieldsReaderVisibility(false);
    this.toggleFieldsTabIndex(false);
    this.toggleModalAriaLabel(false);
  }
@@ -637,6 +638,7 @@ PSUCHATMODULE.showChatUnderbar = function() {
    $("#chat_icon_open").css("display","none");
    $("#FName").last().trigger('focus');
 
+   this.toggleFieldsReaderVisibility(true);
    this.toggleFieldsTabIndex(true);
    this.toggleModalAriaLabel(true);
  }
@@ -737,21 +739,36 @@ PSUCHATMODULE.toggleModalAriaLabel = function (bool) {
   if (bool) { stateLabels.reverse() };
 
   if ($('.chat_close a')[0]) {
-    $('.chat_close a')[0].setAttribute(
+    $('.chat_close a').attr(
       'aria-label',
       (stateLabels[0] + ' ' + ariaText + ' Chat Modal')
     );
-    $('.chat_close a')[0].setAttribute('aria-expanded', bool.toString());
+    $('.chat_close a').attr('aria-expanded', bool.toString());
   }
 };
 
 PSUCHATMODULE.toggleFieldsTabIndex = function (bool) {
   let thisIndex = bool ? '0' : '-1';
-  if (PSUCHATMODULE.tabbedInputs && Array.isArray(PSUCHATMODULE.tabbedInputs)) {
-    PSUCHATMODULE.tabbedInputs.forEach( (tabbed_input) => {
-      tabbed_input.setAttribute('tabindex', thisIndex);
-    })
+  $('.chat_tabIndex').attr('tabindex', thisIndex);
+};
+
+PSUCHATMODULE.toggleFieldsReaderVisibility = function (bool) {
+  let inputTypeAtts = ['hidden','text'];
+  let selectDisplayProps = ['none','block'];
+  let submitTypeAtts= ['hidden','button'];
+
+  if (bool) {
+    inputTypeAtts.reverse();
+    selectDisplayProps.reverse();
+    submitTypeAtts.reverse();
+    $('.chat_formText').removeAttr('hidden');
+  } else {
+    $('.chat_formText').attr('hidden','');
   }
+
+  $('.chat_underbarInput').attr('type', inputTypeAtts[0]);
+  $('.chat_underbarSelect').css('display', selectDisplayProps[0])
+  $('#btnStart2').attr('type', submitTypeAtts[0]);
 };
 
 PSUCHATMODULE.getRenderedHeaderHeight = function () {
@@ -771,6 +788,7 @@ PSUCHATMODULE.createChatElement = function() {
  offerBarHeader.setAttribute("class","chat_header");
  var headerTextToUse = PSUCHATMODULE.chatIsOpen ? PSUCHATMODULE.offerChat_text : PSUCHATMODULE.offerNoChat_text;
 
+ // variable height of div.chat_header determined by number of inner text characters
  var headerHeight = (headerTextToUse.length > 33) ? 62 : 40;
  PSUCHATMODULE.headerExpand = headerHeight;
  PSUCHATMODULE.forceheaderopenExpand = headerHeight;
@@ -810,37 +828,37 @@ PSUCHATMODULE.createChatElement = function() {
  if (PSUCHATMODULE.chatIsOpen)
  {
    chatForm.innerHTML = "     <div class=\"chat_controls field_wrap\">\n" +
-   "				<label for=\"FName\" class=\"req\">First Name<span class=\"chat_req_asterisk\">*</span></label>\n" +
+   "				<label for=\"FName\" class=\"chat_formText req\">First Name<span class=\"chat_req_asterisk\">*</span></label>\n" +
    "				<div class=\"chat_controls_inner\">\n" +
-   "					<input type=\"text\" id=\"FName\" name=\"FName\" utocomplete=\"off\" value=\"\" class=\"chat_underbarInput\" />\n" +
+   "					<input type=\"text\" id=\"FName\" name=\"FName\" utocomplete=\"off\" value=\"\" class=\"chat_underbarInput chat_tabIndex\" />\n" +
    "				</div>\n" +
    "       <div class=\"relshell\"><i id=\"FName-err-icon\" class=\"fas fa-stop-circle\"></i></div>\n" +
    "			</div>\n" +
    "     <div class=\"chat_controls field_wrap\">\n" +
-   "				<label for=\"LName\" class=\"req\">Last Name<span class=\"chat_req_asterisk\">*</span></label>\n" +
+   "				<label for=\"LName\" class=\"chat_formText req\">Last Name<span class=\"chat_req_asterisk\">*</span></label>\n" +
    "				<div class=\"chat_controls_inner\">\n" +
-   "					<input type=\"text\" id=\"LName\" name=\"LName\" utocomplete=\"off\" value=\"\" class=\"chat_underbarInput\" />\n" +
+   "					<input type=\"text\" id=\"LName\" name=\"LName\" utocomplete=\"off\" value=\"\" class=\"chat_underbarInput chat_tabIndex\" />\n" +
    "				</div>\n" +
    "       <div class=\"relshell\"><i id=\"LName-err-icon\" class=\"fas fa-stop-circle\"></i></div>\n" +
    "			</div>\n" + (PSUCHATMODULE.showIDField ?
    "           <div class=\"chat_controls field_wrap\">\n" +
-   "				<label for=\"PSUID\" >PSU ID #</label>\n" +
+   "				<label for=\"PSUID\" class=\"chat_formText\">PSU ID #</label>\n" +
    "				<div class=\"chat_controls_inner\">\n" +
-   "					<input type=\"text\" id=\"PSUID\" name=\"PSUID\" value=\"\" class=\"chat_underbarInput\" />\n" +
+   "					<input type=\"text\" id=\"PSUID\" name=\"PSUID\" value=\"\" class=\"chat_underbarInput chat_tabIndex\" />\n" +
    "				</div>\n" +
    "			</div>\n" : "") +
    "			<div class=\"chat_controls field_wrap\">\n" +
-   "				<label for=\"Email\" class=\"req\">Email<span class=\"chat_req_asterisk\">*</span></label>\n" +
+   "				<label for=\"Email\" class=\"chat_formText req\">Email<span class=\"chat_req_asterisk\">*</span></label>\n" +
    "				<div class=\"chat_controls_inner\">\n" +
-   "					<input type=\"text\" id=\"Email\" utocomplete=\"off\" name=\"Email\" value=\"\" class=\"chat_underbarInput\" />\n" +
+   "					<input type=\"text\" id=\"Email\" utocomplete=\"off\" name=\"Email\" value=\"\" class=\"chat_underbarInput chat_tabIndex\" />\n" +
    "				</div>\n" +
    "       <div class=\"relshell\"><i id=\"Email-err-icon\" class=\"fas fa-stop-circle\"></i></div>\n" +
    "			</div>\n" +
      (PSUCHATMODULE.showSBGradField ?
    "			<div class=\"chat_controls field_wrap\">\n" +
-   "				<label for=\"SBType\" >I am a </label>\n" +
+   "				<label for=\"SBType\" class=\"chat_formText\">I am a </label>\n" +
    "				<div class=\"chat_controls_inner\">\n" +
-   "<select id=\"SBType\">\n" +
+   "<select id=\"SBType\" class=\"chat_underbarSelect chat_tabIndex\">\n" +
    "<option value=\"o\"> . . . </option>\n" +
    "<option value=\"1\">Future student</option>\n" +
    "<option value=\"2\">Current student</option>\n" +
@@ -850,9 +868,9 @@ PSUCHATMODULE.createChatElement = function() {
    "				</div>\n" +
    "			</div>\n" +
    "           <div class=\"chat_controls field_wrap\">\n" +
-   "				<label for=\"SBMajor\" >interested in </label>\n" +
+   "				<label for=\"SBMajor\" class=\"chat_formText\">interested in </label>\n" +
    "				<div class=\"chat_controls_inner\">\n" +
-   "<select id=\"SBMajor\">\n" +
+   "<select id=\"SBMajor\" class=\"chat_underbarSelect chat_tabIndex\">\n" +
    "<option value=\"o\"> . . . </option>\n" +
    "<option value=\"MRED-RED\">Master of Real Estate Development</option>\n" +
    "<option value=\"MS-FNC\">Master of Science in Finance</option>\n" +
@@ -872,13 +890,13 @@ PSUCHATMODULE.createChatElement = function() {
    "           <input type=\"hidden\" id=\"TeamID\" name=\"TeamID\" value=\"87\" />\n" +
    "           <input type=\"hidden\" id=\"MediaID\" name=\"MediaID\" value=\"6\" />\n" +
    "			<div class=\"chat_controls\" style=\"text-align:center\">\n" +
-   "				 <input class=\"\" id=\"btnStart2\"  type=\"button\" value=\"Start Chat\" onClick=\"PSUCHATMODULE.almostTriggerChat()\" />\n" +
-   "        <div id=\"legend\">*All fields are required</div>" +
-   "				<input class=\"\" id=\"btnStart\" type=\"button\" style=\"display:none\" value=\"Start Chat\" onClick=\"triggerChat()\" />\n" +
-   "				<input class=\"\" id=\"btnEstimate\" type=\"button\" style=\"display:none\" value=\"Estimate Chat\" onClick=\"\" />\n" +
+   "				 <input class=\"chat_tabIndex\" id=\"btnStart2\"  type=\"button\" value=\"Start Chat\" onClick=\"PSUCHATMODULE.almostTriggerChat()\" />\n" +
+   "        <div id=\"legend\" class=\"chat_formText\">*All fields are required</div>" +
+   "				<input class=\"chat_tabIndex\" id=\"btnStart\" type=\"button\" style=\"display:none\" value=\"Start Chat\" onClick=\"triggerChat()\" />\n" +
+   "				<input class=\"chat_tabIndex\" id=\"btnEstimate\" type=\"button\" style=\"display:none\" value=\"Estimate Chat\" onClick=\"\" />\n" +
      (PSUCHATMODULE.emailText ?
    //	"				<hr style=\"height:1px; border:none; color:#000; background-color:#000; width:100%; text-align:center; margin: 0 auto;\">\n"+
-   "				<div class=\"chat_emailFooter\">" + PSUCHATMODULE.emailText + "</div>\n" : "") +
+   "				<div class=\"chat_formText chat_emailFooter\">" + PSUCHATMODULE.emailText + "</div>\n" : "") +
    "			</div>";
   } else {
    chatForm.innerHTML = "<div class=\"chat_offHours\" 	style=\"font-size:14px;\">" + PSUCHATMODULE.offhoursText + "</div>\n";
@@ -892,23 +910,10 @@ PSUCHATMODULE.createChatElement = function() {
  underbar.appendChild(offerBar);
  document.body.appendChild(underbar);
 
- PSUCHATMODULE.tabbedInputs = [];
- let button_ids = ['btnStart', 'btnStart2', 'btnEstimate']
-
- document.querySelectorAll('.chat_underbarInput').forEach( (input_el) => {
-   PSUCHATMODULE.tabbedInputs.push(input_el);
- })
-
- for (let i = 0; i < button_ids.length; i++) {
-   if ( document.querySelector('#' + button_ids[i]) ) {
-     PSUCHATMODULE.tabbedInputs.push( document.querySelector('#' + button_ids[i]) );
-   }
- }
-
+ // by default, hide tab-able & readable elements; label the click-able elements
+ PSUCHATMODULE.toggleFieldsReaderVisibility(false);
  PSUCHATMODULE.toggleFieldsTabIndex(false);
-
  PSUCHATMODULE.toggleModalAriaLabel(false);
-
  /*
  PSUCHATMODULE.headerExpand =  Math.floor(
    PSUCHATMODULE.getRenderedHeaderHeight() * 0.85

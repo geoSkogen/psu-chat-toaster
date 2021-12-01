@@ -1,8 +1,9 @@
 
 //top
-PSUCHATMODULE.formExpand_remodelOffset = 50;
+PSUCHATMODULE.formExpand_remodelOffset = 60;
 
-PSUCHATMODULE.formExpand_AddField = 330;
+PSUCHATMODULE.formExpand_AddEmail = 248;
+PSUCHATMODULE.formExpand_AddField = 2820;
 
 
 
@@ -16,13 +17,13 @@ PSUCHATMODULE.formExpand += PSUCHATMODULE.formExpand_remodelOffset;
 
 
 /*
-
 showChatUnderbar
 */
-
+this.toggleFieldsReaderVisibility(false);
 this.toggleFieldsTabIndex(false);
 this.toggleModalAriaLabel(false);
 // . . .
+this.toggleFieldsReaderVisibility(true);
 this.toggleFieldsTabIndex(true);
 this.toggleModalAriaLabel(true);
 
@@ -32,7 +33,6 @@ this.toggleModalAriaLabel(true);
 /*
 loadStyle
 */
-
 var faLink = document.createElement("link");
 var gfLink = document.createElement("link");
 
@@ -52,10 +52,9 @@ document.body.appendChild(gfLink)
 /*
 validateFields
 */
-
+$('#' + this.id + '-err-icon').css('display','block');
 // . . .
-
-
+$('#' + this.id + '-err-icon').css('display','none');
 
 
 
@@ -85,6 +84,23 @@ PSUCHATMODULE.toggleFieldsTabIndex = function (bool) {
   })
 }
 
+PSUCHATMODULE.toggleFieldsReaderVisibility = function (bool) {
+  let inputTypeAtts = ['hidden','text'];
+  let selectDisplayProps = ['none','block'];
+  let submitTypeAtts= ['hidden','button'];
+
+  if (bool) {
+    inputTypeAtts.reverse();
+    selectDisplayProps.reverse();
+    submitTypeAtts.reverse();
+  }
+
+  $('.chat_underbarInput').attr('type', inputTypeAtts[0]);
+  $('.chat_underbarSelect').css('display', selectDisplayProps[0])
+  $('#btnStart2').attr('type', submitTypeAtts[0]);
+}
+
+
 PSUCHATMODULE.getRenderedHeaderHeight = function () {
   const chat_header = $('.chat_header')[0]
   const chat_header_styles = (chat_header) ? window.getComputedStyle( chat_header ) : null
@@ -96,26 +112,22 @@ PSUCHATMODULE.getRenderedHeaderHeight = function () {
 
 
 /*
-following DOM getRender
+preceding header construction
+*/
+var headerHeight = (headerTextToUse.length > 33) ? 62 : 40;
+PSUCHATMODULE.headerExpand = headerHeight;
+PSUCHATMODULE.forceheaderopenExpand = headerHeight;
+PSUCHATMODULE.forceheaderopenExpand = headerHeight;
+offerBarHeader.style.height = headerHeight + 'px';
+
+
+
+/*
+following DOM render
 */
 
-PSUCHATMODULE.tabbedInputs = [];
-let button_ids = ['btnStart', 'btnStart2', 'btnEstimate']
-
-document.querySelectorAll('.chat_underbarInput').forEach( (input_el) => {
-  PSUCHATMODULE.tabbedInputs.push(input_el);
-})
-
-for (let i = 0; i < button_ids.length; i++) {
-  if ( document.querySelector('#' + button_ids[i]) ) {
-    PSUCHATMODULE.tabbedInputs.push(
-      document.querySelector('#' + button_ids[i])
-    );
-  }
-}
+PSUCHATMODULE.toggleFieldsReaderVisibility(false);
 
 PSUCHATMODULE.toggleFieldsTabIndex(false);
 
 PSUCHATMODULE.toggleModalAriaLabel(false);
-
-PSUCHATMODULE.headerExpand = PSUCHATMODULE.getRenderedHeaderHeight() + (PSUCHATMODULE.getRenderedHeaderHeight()/10)
