@@ -7,14 +7,14 @@ var PSUCHATMODULE = PSUCHATMODULE || {};
 PSUCHATMODULE.team = "";   // ADM, FA.
 PSUCHATMODULE.formExpand = 205;
 PSUCHATMODULE.formExpand_noChat = 220;// changed from 128 -- D8 change
-PSUCHATMODULE.formExpand_AddEmail = 220; //Expand Toaster for Email Message
-PSUCHATMODULE.formExpand_AddField = 300; //Expand Toaster for Addtl Fields
+PSUCHATMODULE.formExpand_AddEmail = 248; //Expand Toaster for Email Message
+PSUCHATMODULE.formExpand_AddField = 282; //Expand Toaster for Addtl Fields
 
 PSUCHATMODULE.formExpand_remodelOffset = 60;
 
-PSUCHATMODULE.headerExpand = 30;
-PSUCHATMODULE.forceheaderopenExpand = 30;
-PSUCHATMODULE.forceheaderoffExpand = 30;
+PSUCHATMODULE.headerExpand = 40;
+PSUCHATMODULE.forceheaderopenExpand = 40;
+PSUCHATMODULE.forceheaderoffExpand = 40;
 PSUCHATMODULE.forceOffHours = false;
 PSUCHATMODULE.forceOnHours = false;
 PSUCHATMODULE.offerNoChat_text = "Contact Admissions";
@@ -174,8 +174,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : false,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
 
@@ -187,19 +187,19 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : false,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
  FA: { team: "FA", offerNoChat_text: "Contact Financial Aid", offerChat_text: "Chat with Financial Aid",
-   offhoursText: "FA Chat is available Monday - Wednesday & Friday: 10am - 4pm PST, Thursday: 11am - 4pm PST. We can also be reached by phone at (503)725-3461 or <a href=\"mailto:askfa@pdx.edu\" target=\"_blank\"> askfa@pdx.edu" + "</a>. We appreciate your patience and understanding as we work to continue serving students during these unprecedented times. ",
+   offhoursText: "Financial Aid Chat is available Monday - Wednesday & Friday:&nbsp; 10am - 4pm PST, Thursday: 11am - 4pm PST. We can also be reached by phone at (503)725-3461 or <a href=\"mailto:askfa@pdx.edu\" target=\"_blank\"> askfa@pdx.edu" + "</a>. We appreciate your patience and understanding as we work to continue serving students during these unprecedented times. ",
    chatWindowHeader: "Financial Aid",
    emailText: "",
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderoffExpand : 40,
    timerURL: "/Media/static/timer/chatTimerFINAID.aspx"
    },
  IELP: { team: "IELP", offerNoChat_text: "Contact IELP Admissions", offerChat_text: "Chat with IELP Admissions",
@@ -208,8 +208,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimer_M-R_Normal.aspx"
    },
  SFS: { team: "SFS", offerNoChat_text: "Chat with Student Financial Services", offerChat_text: "Chat with Student Financial Services",
@@ -219,8 +219,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimerSFS.aspx"
    },
  EAPEER: { team: "EAPEER", offerNoChat_text: "Chat with PSU Education Abroad", offerChat_text: "Chat with PSU Education Abroad",
@@ -230,8 +230,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimerEDPEER.aspx"
    },
  TAPS: { team: "TAPS", offerNoChat_text: "Chat with PSU Parking and Transportation", offerChat_text: "Chat with PSU Parking and Transportation",
@@ -241,8 +241,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
  HR: { team: "HR", offerNoChat_text: "Office of Human Resources", offerChat_text: "Chat with Office of Human Resources",
@@ -252,8 +252,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
  REG: { team: "REG", offerNoChat_text: "Registrar's Office", offerChat_text: "Chat with the Registrar's Office!",
@@ -262,9 +262,9 @@ PSUCHATMODULE.teamSettings = {
    emailText: "You may also email us at <a href=\"mailto:registrar@pdx.edu\" target=\"_blank\"> registrar@pdx.edu" + "</a> ",
    showIDField : false,
    showSBGradField : false,
-   chatteamactive : false,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   chatteamactive : true,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimer_M-R_Normal.aspx"
    },
  Transfer: { team: "Transfer", offerNoChat_text: "Career and Transfer Centers Front Office", offerChat_text: "Chat with the Career and Transfer Centers Office!",
@@ -274,8 +274,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimer_M-R_Normal.aspx"
    },
  Career: { team: "Career", offerNoChat_text: "Career and Transfer Centers Front Office", offerChat_text: "Chat with the Career and Transfer Centers Office!",
@@ -285,8 +285,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimer_M-R_Normal.aspx"
    },
  CLASDEAN: { team: "CLASDEAN", offerNoChat_text: "CLAS Dean Office", offerChat_text: "Chat with the CLAS Dean Office!",
@@ -296,8 +296,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
  CLASESM: { team: "CLASESM", offerNoChat_text: "Environmental Science & Management Office", offerChat_text: "Chat with the Environmental Science & Management Office!",
@@ -309,7 +309,7 @@ PSUCHATMODULE.teamSettings = {
    showSBGradField : false,
    chatteamactive : true,
    forceheaderopenExpand : 50,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimerCLASESM.aspx"
    },
  CUPAPA: { team: "CUPAPA", offerNoChat_text: "Public Administration", offerChat_text: "Chat with Public Administration!",
@@ -319,8 +319,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimerCUPAPA.aspx"
    },
  SBGRAD: { team: "SBGRAD", offerNoChat_text: "Graduate Business Programs", offerChat_text: "Chat with Graduate Business Programs!",
@@ -330,8 +330,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : true,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimerSBGrad.aspx"
    },
  GDI: { team: "GDI", offerNoChat_text: "Global Diversity & Inclusion", offerChat_text: "Chat with us! How may we assist you?",
@@ -341,8 +341,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimerGDI.aspx"
    },
  APPLIEDLING: { team: "APPLIEDLING", offerNoChat_text: "Applied Linguistics", offerChat_text: "Chat with Applied Linguistics Dept.",
@@ -352,8 +352,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimerAPPLIEDLING.aspx"
    },
  QRC: { team: "QRC", offerNoChat_text: "Queer Resource Center", offerChat_text: "Chat with Queer Resource Center",
@@ -363,8 +363,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 30,
-   forceheaderoffExpand : 30,
+   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 40,
    timerURL: "/Media/static/timer/chatTimerQRC.aspx"
    }
 };
@@ -656,12 +656,12 @@ PSUCHATMODULE.loadTreatJS = function() {
 };
 
 PSUCHATMODULE.loadStyle = function() {
- var cStyle = document.createElement("style");
- var headerHeight = PSUCHATMODULE.team == 'CLASESM' ? '30' : '23'
- cStyle.type = "text/css";
 
+ var cStyle = document.createElement("style");
  var faLink = document.createElement("link");
  var gfLink = document.createElement("link");
+
+ cStyle.type = "text/css";
 
  faLink.rel = "stylesheet";
  faLink.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css";
@@ -670,16 +670,16 @@ PSUCHATMODULE.loadStyle = function() {
  gfLink.href = "https://fonts.googleapis.com/css?family=Montserrat";
 
 
- var strStyle = "div.chat_underbar {position:fixed;right:20px;bottom:0px;height:0px;margin:0px;padding:0px;border:none;width:auto;z-index:250;font-family:'Montserrat';box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}\n" +
- "div.chat_underbar div.chat_offerChat {width:300px;height:auto;margin:0px;padding:0px;border-width:0px;background-color:#ededee;text-align:center;}\n" +
+ var strStyle = "div.chat_underbar {position:fixed;right:20px;bottom:0px;height:0px;margin:0px;padding:0px;border:none;width:auto;overflow:hidden;z-index:250;font-family:'Montserrat';box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);background-color:#ededee;}\n" +
+ "div.chat_underbar div.chat_offerChat {width:300px;height:200px;margin:0px;padding:0px;border-width:0px;background-color:#ededee;text-align:center;}\n" +
  "div.chat_underbar div.chat_offerNoChat {width:300px;height:200px;margin:0px;padding:0px;background-color:#e86d1f;text-align:center;}\n" +
- "div.chat_header {height:auto;color:#ededee;background-color:black;border:0px;padding:6px 14px;margin:0px;text-align:left;}\n" +
+ "div.chat_header {height:auto;color:#ededee;background-color:black;border:0px;padding:6px 14px;margin:0px;text-align:left;box-sizing:border-box;}\n" +
  "div.chat_close {float:right;height:28px;width:21px;padding:0px 0px 0px 0px;color:white;text-align:right;vertical-align:top;}\n" +
  "div.chat_header a {text-decoration:none;}\n" +
  "a.chat_headerText {display:block;width:auto;padding:0.33em;font-family:'Montserrat';color:#ededee;font-size:14px;font-weight:600;}\n" +
  "div.chat_header a:hover, div.chat_header a:focus { text-decoration:none; }\n" +
- "div.chat_offerChatForm {height:auto;background-color:#ededee;padding:20px 20px;text-align:left;color:black;}\n" +
- ".chat_controls {width:auto;clear:both;height:auto;}\n" +
+ "div.chat_offerChatForm {height:160px;background-color:#ededee;padding:20px 20px;text-align:left;color:black;}\n" +
+ ".chat_controls {width:270px;clear:both;height:auto;}\n" +
  ".field_wrap {display:flex;flex-flow:row wrap;justify-content:center;margin:0 0 0.66em 0;}\n" +
  ".chat_controls label{font-size:14px;color:#1d252d;display:block;float:none;width:auto;text-align:right;padding:0.33em 0.66em 0 0;margin-bottom:0;font-weight:600;min-width:100px;max-width:100px;}\n" +
  ".chat_controls_inner { padding-top:3px;max-width:160px;min-width:160px; }\n" +
@@ -689,52 +689,18 @@ PSUCHATMODULE.loadStyle = function() {
  ".chat_req_asterisk {color:#1d252d;vertical-align:baselin;font-size:12px;}\n" +
  "input#btnStart2 {color:#ededee;font-weight:600;border-width:0px;background-color:#6a7f10;width:auto;font-size:14px;height:auto;padding:0.5em 1.75em;margin:2em 0;border-radius:0 0 0 0;}\n" +
  "input#btnStart2:hover {text-shadow: 0 0 15px #000000;text-decoration:none;}\n" +
- "div#legend {font-size:13px;font-weight:500}" +
+ "div#legend, div.chat_emailFooter {font-size:13px;font-weight:500;margin-bottom:1em;}" +
  ".relshell {position:relative;}" +
  "i.fa-stop-circle {position:absolute;left:-1.33em;top:0.66em;font-size:14px;font-weight:600;color:red;display:none;}";
 
- var strLongHeaderStyle = "div.chat_underbar {position: fixed;right:20px;bottom: 0px;height:0px;margin:0px;padding:0px;border:none;width:auto;z-index:250;font-family:'Montserrat'box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}\n" +
- "div.chat_underbar div.chat_offerChat {width:300px;height:auto;margin:0px;padding:0px;border-width:0px;background-color:#ededee;text-align:center;}\n" +
- "div.chat_underbar div.chat_offerNoChat {width:300px;height:200px;margin:0px;padding:0px;background-color:#e86d1f;text-align:center;}\n" +
- "div.chat_header {height:auto;color:#ededee;background-color:black;border:0px;padding:6px 14px;margin:0px;text-align:left;}\n" +
- "div.chat_close {float:right;height:28px;width:21px;padding:0px 0px 0px 0px;color:white;text-align:right;vertical-align:top;}\n" +
- "div.chat_header a {text-decoration:none;}\n" +
- "a.chat_headerText {display:block;width:auto;padding:0.33em;font-family:'Montserrat';color:#ededee;font-size:14px;font-weight:600;}\n" +
- "div.chat_header a:hover, div.chat_header a:focus { text-decoration:none; }\n" +
- "div.chat_offerChatForm {height:auto;background-color:#ededee;padding:20px 20px;text-align:left;color:black;}\n" +
- ".chat_controls {width:auto;clear:both;height:auto;}\n" +
- ".field_wrap {display:flex;flex-flow:row wrap;justify-content:center;margin:0 0 0.66em 0;}\n" +
- ".chat_controls label {font-size:14px;color:#1d252d;display:block;float:none;width:auto;text-align:right;padding:0.33em 0.66em 0 0;margin-bottom:0;font-weight:600;min-width:100px;max-width:100px;}\n" +
- ".chat_controls_inner { padding-top:3px;max-width:160px;min-width:160px; }\n" +
- ".chat_controls_invalid {border:solid 2px red;}\n" +
- ".chat_underbarInput,.chat_controls select {width:100%;color:#1d252d;font-size:13px;font-weight:600;opacity:0.8;padding:0.15em 0.5em;}\n" +
- ".chat_controls select {padding:0.25em;}\n" +
- ".chat_req_asterisk {color:#1d252d;vertical-align:baselin;font-size:12px;}\n" +
- "input#btnStart2 {color:#ededee;font-weight:600;border-width:0px;background-color:#6a7f10;width:auto;font-size:14px;height:auto;padding:0.5em 1.75em;margin:2em 0;border-radius:0 0 0 0;}\n" +
- "input#btnStart2:hover {text-shadow: 0 0 15px #000000;text-decoration:none;}\n" +
- "div#legend {font-size:13px;font-weight:500}" +
- ".relshell {position:relative;}" +
- "i.fa-stop-circle {position:absolute;left:-1.33em;top:0.66em;font-size:14px;font-weight:600;color:red;display:none;}";
+  if (cStyle.styleSheet)
+    cStyle.styleSheet.cssText = strStyle;
+  else
+    cStyle.innerHTML = strStyle;
 
-  if (PSUCHATMODULE.team == 'CLASESM')
-    {
-    if (cStyle.styleSheet)
-      cStyle.styleSheet.cssText = strLongHeaderStyle;
-    else
-      cStyle.innerHTML = strLongHeaderStyle;
-      document.body.appendChild(cStyle);
-
-    }
-    else if (PSUCHATMODULE.team != 'CLASESM')
-    {
-      if (cStyle.styleSheet)
-        cStyle.styleSheet.cssText = strStyle;
-      else
-        cStyle.innerHTML = strStyle;
-        document.body.appendChild(cStyle);
-    }
-  document.body.appendChild(faLink)
-  document.body.appendChild(gfLink)
+  document.body.appendChild(cStyle);
+  document.body.appendChild(faLink);
+  document.body.appendChild(gfLink);
 };
 
 PSUCHATMODULE.validateFields = function() {
@@ -777,7 +743,7 @@ PSUCHATMODULE.toggleModalAriaLabel = function (bool) {
     );
     $('.chat_close a')[0].setAttribute('aria-expanded', bool.toString());
   }
-}
+};
 
 PSUCHATMODULE.toggleFieldsTabIndex = function (bool) {
   let thisIndex = bool ? '0' : '-1';
@@ -786,14 +752,14 @@ PSUCHATMODULE.toggleFieldsTabIndex = function (bool) {
       tabbed_input.setAttribute('tabindex', thisIndex);
     })
   }
-}
+};
 
 PSUCHATMODULE.getRenderedHeaderHeight = function () {
   const chat_header = $('.chat_header')[0]
   const chat_header_styles = (chat_header) ? window.getComputedStyle( chat_header ) : null
   const chat_header_height = (chat_header) ? chat_header_styles.getPropertyValue('height') : 30
   return Number(chat_header_height.replace('px',''))
-}
+};
 
 // depending on this.chatIsOpen, display chat or email capabilities.
 PSUCHATMODULE.createChatElement = function() {
@@ -804,6 +770,12 @@ PSUCHATMODULE.createChatElement = function() {
  var offerBarHeader = document.createElement("div");
  offerBarHeader.setAttribute("class","chat_header");
  var headerTextToUse = PSUCHATMODULE.chatIsOpen ? PSUCHATMODULE.offerChat_text : PSUCHATMODULE.offerNoChat_text;
+
+ var headerHeight = (headerTextToUse.length > 33) ? 62 : 40;
+ PSUCHATMODULE.headerExpand = headerHeight;
+ PSUCHATMODULE.forceheaderopenExpand = headerHeight;
+ PSUCHATMODULE.forceheaderopenExpand = headerHeight;
+ offerBarHeader.style.height = headerHeight + 'px';
 
  offerBarHeader.innerHTML = "<div class=\"chat_close\"><a href=\"javascript:PSUCHATMODULE.showChatUnderbar()\"><span id=\"chat_icon_open\" aria-hidden=\"true\"><img src=\"https://crm.pdx.edu/Media/static/images/chevron-up.png\" alt=\"Open\" style=\"height:17px;width:19px;border:0px;margin:0px;padding:0px;\" /></span>"
     + "<span id=\"chat_icon_close\" aria-hidden=\"true\" style=\"display:none\"><img src=\"https://crm.pdx.edu/Media/static/images/close.png\" alt=\"Close\" style=\"height:13px;width:14px;border:0px;margin:0px;padding:0px;\" /></span></a></div>\n"
@@ -828,12 +800,12 @@ PSUCHATMODULE.createChatElement = function() {
  vname.setAttribute("class","underbarInput");
  */
  var cururl = window.location.href;
- /*
+
  if (PSUCHATMODULE.chatIsOpen)
      PSUCHATMODULE.headerExpand = PSUCHATMODULE.forceheaderopenExpand;
  else
      PSUCHATMODULE.headerExpand = PSUCHATMODULE.forceheaderoffExpand;
-  */
+
 
  if (PSUCHATMODULE.chatIsOpen)
  {
@@ -901,14 +873,12 @@ PSUCHATMODULE.createChatElement = function() {
    "           <input type=\"hidden\" id=\"MediaID\" name=\"MediaID\" value=\"6\" />\n" +
    "			<div class=\"chat_controls\" style=\"text-align:center\">\n" +
    "				 <input class=\"\" id=\"btnStart2\"  type=\"button\" value=\"Start Chat\" onClick=\"PSUCHATMODULE.almostTriggerChat()\" />\n" +
-   "        <div id=\"legend\">*All fields are required</div>"
+   "        <div id=\"legend\">*All fields are required</div>" +
    "				<input class=\"\" id=\"btnStart\" type=\"button\" style=\"display:none\" value=\"Start Chat\" onClick=\"triggerChat()\" />\n" +
    "				<input class=\"\" id=\"btnEstimate\" type=\"button\" style=\"display:none\" value=\"Estimate Chat\" onClick=\"\" />\n" +
      (PSUCHATMODULE.emailText ?
-   "				<BR/> \n" +
-   "				<BR/> \n" + //	"				<HR/> \n"+
    //	"				<hr style=\"height:1px; border:none; color:#000; background-color:#000; width:100%; text-align:center; margin: 0 auto;\">\n"+
-   "				<Div>" + PSUCHATMODULE.emailText + "</DIV>\n" : "") +
+   "				<div class=\"chat_emailFooter\">" + PSUCHATMODULE.emailText + "</div>\n" : "") +
    "			</div>";
   } else {
    chatForm.innerHTML = "<div class=\"chat_offHours\" 	style=\"font-size:14px;\">" + PSUCHATMODULE.offhoursText + "</div>\n";
@@ -931,9 +901,7 @@ PSUCHATMODULE.createChatElement = function() {
 
  for (let i = 0; i < button_ids.length; i++) {
    if ( document.querySelector('#' + button_ids[i]) ) {
-     PSUCHATMODULE.tabbedInputs.push(
-       document.querySelector('#' + button_ids[i])
-     );
+     PSUCHATMODULE.tabbedInputs.push( document.querySelector('#' + button_ids[i]) );
    }
  }
 
@@ -941,10 +909,11 @@ PSUCHATMODULE.createChatElement = function() {
 
  PSUCHATMODULE.toggleModalAriaLabel(false);
 
+ /*
  PSUCHATMODULE.headerExpand =  Math.floor(
    PSUCHATMODULE.getRenderedHeaderHeight() * 0.85
  )
-
+ */
  $(".chat_underbarInput").on("keyup", function() {
    var allowSubmit = PSUCHATMODULE.validateFields();
    var fullName = $("#FName").val() + " "  + $("#LName").val();
