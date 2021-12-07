@@ -843,14 +843,14 @@ PSUCHATMODULE.createChatElement = function() {
    "				<div class=\"chat_controls_inner\">\n" +
    "					<input type=\"text\" id=\"FName\" name=\"FName\" utocomplete=\"off\" value=\"\" class=\"chat_underbarInput chat_tabIndex\" />\n" +
    "				</div>\n" +
-   "       <div class=\"relshell\"><i id=\"FName-err-icon\" class=\"fas fa-stop-circle\"></i></div>\n" +
+   "       <div class=\"relshell\"><i id=\"FName-err-icon\" class=\"fas fa-stop-circle\" title=\"Field cannot be emtpy.\"></i></div>\n" +
    "			</div>\n" +
    "     <div class=\"chat_controls field_wrap\">\n" +
    "				<label for=\"LName\" class=\"chat_formText req\">Last Name<span class=\"chat_req_asterisk\">*</span></label>\n" +
    "				<div class=\"chat_controls_inner\">\n" +
    "					<input type=\"text\" id=\"LName\" name=\"LName\" utocomplete=\"off\" value=\"\" class=\"chat_underbarInput chat_tabIndex\" />\n" +
    "				</div>\n" +
-   "       <div class=\"relshell\"><i id=\"LName-err-icon\" class=\"fas fa-stop-circle\"></i></div>\n" +
+   "       <div class=\"relshell\"><i id=\"LName-err-icon\" class=\"fas fa-stop-circle\" title=\"Field cannot be emtpy.\"></i></div>\n" +
    "			</div>\n" + (PSUCHATMODULE.showIDField ?
    "           <div class=\"chat_controls field_wrap\">\n" +
    "				<label for=\"PSUID\" class=\"chat_formText\">PSU ID #</label>\n" +
@@ -863,11 +863,11 @@ PSUCHATMODULE.createChatElement = function() {
    "				<div class=\"chat_controls_inner\">\n" +
    "					<input type=\"text\" id=\"Email\" utocomplete=\"off\" name=\"Email\" value=\"\" class=\"chat_underbarInput chat_tabIndex\" />\n" +
    "				</div>\n" +
-   "       <div class=\"relshell\"><i id=\"Email-err-icon\" class=\"fas fa-stop-circle\"></i></div>\n" +
+   "       <div class=\"relshell\"><i id=\"Email-err-icon\" class=\"fas fa-stop-circle\" title=\"Field cannot be emtpy.\"></i></div>\n" +
    "			</div>\n" +
      (PSUCHATMODULE.showSBGradField ?
    "			<div class=\"chat_controls field_wrap\">\n" +
-   "				<label for=\"SBType\" class=\"chat_formText\">I am a </label>\n" +
+   "				<label for=\"SBType\" class=\"chat_formText\" aria-label=\"Current Student Status:\">I am a </label>\n" +
    "				<div class=\"chat_controls_inner\">\n" +
    "<select id=\"SBType\" class=\"chat_underbarSelect chat_tabIndex\">\n" +
    "<option value=\"o\"> . . . </option>\n" +
@@ -879,7 +879,7 @@ PSUCHATMODULE.createChatElement = function() {
    "				</div>\n" +
    "			</div>\n" +
    "           <div class=\"chat_controls field_wrap\">\n" +
-   "				<label for=\"SBMajor\" class=\"chat_formText\">interested in </label>\n" +
+   "				<label for=\"SBMajor\" class=\"chat_formText\" aria-label=\"Program of Interest:\">interested in </label>\n" +
    "				<div class=\"chat_controls_inner\">\n" +
    "<select id=\"SBMajor\" class=\"chat_underbarSelect chat_tabIndex\">\n" +
    "<option value=\"o\"> . . . </option>\n" +
