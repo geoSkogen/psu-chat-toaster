@@ -5,10 +5,10 @@
 var PSUCHATMODULE = PSUCHATMODULE || {};
 PSUCHATMODULE.team = "";   // ADM, FA.
 PSUCHATMODULE.formExpand = 205;
-PSUCHATMODULE.formExpand_noChat = 220;// changed from 128 -- D8 change
-PSUCHATMODULE.formExpand_AddEmail = 256; //Expand Toaster for Email Message
+PSUCHATMODULE.formExpand_noChat = 236;// changed from 128 -- D8 change
+PSUCHATMODULE.formExpand_AddEmail = 260; //Expand Toaster for Email Message
 PSUCHATMODULE.formExpand_AddField = 282; //Expand Toaster for Addtl Fields
-PSUCHATMODULE.formExpand_remodelOffset = 60;
+PSUCHATMODULE.formExpand_remodelOffset = 66;
 PSUCHATMODULE.headerExpand = 40;
 PSUCHATMODULE.forceheaderopenExpand = 40;
 PSUCHATMODULE.forceheaderoffExpand = 40;
@@ -190,7 +190,7 @@ PSUCHATMODULE.teamSettings = {
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
  FA: { team: "FA", offerNoChat_text: "Contact Financial Aid", offerChat_text: "Chat with Financial Aid",
-   offhoursText: "Financial Aid Chat is available Monday - Wednesday & Friday:&nbsp; 10am - 4pm PST, Thursday: 11am - 4pm PST. We can also be reached by phone at (503)725-3461 or <a href=\"mailto:askfa@pdx.edu\" target=\"_blank\"> askfa@pdx.edu" + "</a>. We appreciate your patience and understanding as we work to continue serving students during these unprecedented times. ",
+   offhoursText: "Financial Aid Chat is available Monday through Wednesday, and Friday:&nbsp; 10am - 4pm PST, Thursday: 11am - 4pm PST. We can also be reached by phone at (503)725-3461 or <a href=\"mailto:askfa@pdx.edu\" target=\"_blank\"> askfa@pdx.edu" + "</a>. We appreciate your patience and understanding as we work to continue serving students during these unprecedented times. ",
    chatWindowHeader: "Financial Aid",
    emailText: "",
    showIDField : false,
@@ -651,6 +651,14 @@ PSUCHATMODULE.almostTriggerChat = function() {
    OpenChat(false);
    $(".chat-frame").css("z-index","270");
    if ($(".chat-frame").length > 0) this.hideChatUnderbar();
+ } else {
+   // assign focus to first invalid form element
+   for (let i = 0; document.querySelectorAll('.chat_underbarInput').length; i++) {
+     if (document.querySelectorAll('.chat_underbarInput')[i].className.indexOf('invalid')>-1) {
+       document.querySelectorAll('.chat_underbarInput')[i].focus();
+       break;
+     }
+   }
  }
 };
 
@@ -690,7 +698,7 @@ PSUCHATMODULE.loadStyle = function() {
  ".chat_underbarInput,.chat_controls select {width:100%;color:#1d252d;font-size:13px;font-weight:600;opacity:0.8;padding:0.15em 0.5em;}\n" +
  ".chat_controls select {padding:0.25em;}\n" +
  ".chat_req_asterisk {color:#1d252d;vertical-align:baselin;font-size:12px;}\n" +
- "input#btnStart2 {color:#ededee;font-weight:600;border-width:0px;background-color:#6a7f10;width:auto;font-size:14px;height:auto;padding:0.5em 1.75em;margin:2em 0;border-radius:0 0 0 0;}\n" +
+ "input#btnStart2 {color:#ffffff;font-weight:800;border-width:0px;background-color:#6a7f10;width:auto;font-size:16px;height:auto;padding:0.5em 1.75em;margin:2em 0;border-radius:0 0 0 0;}\n" +
  "input#btnStart2:hover {text-shadow: 0 0 15px #000000;text-decoration:none;}\n" +
  "div#legend, div.chat_emailFooter {font-size:13px;font-weight:500;margin-bottom:1em;}" +
  "div.chat_emailFooter {text-align:center;}" +
