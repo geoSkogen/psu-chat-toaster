@@ -8,7 +8,7 @@ PSUCHATMODULE.formExpand = 205;
 PSUCHATMODULE.formExpand_noChat = 236;// changed from 128 -- D8 change
 PSUCHATMODULE.formExpand_AddEmail = 260; //Expand Toaster for Email Message
 PSUCHATMODULE.formExpand_AddField = 282; //Expand Toaster for Addtl Fields
-PSUCHATMODULE.formExpand_remodelOffset = 66;
+PSUCHATMODULE.formExpand_remodelOffset = 66;//base additional ertical space for revision 12/21
 PSUCHATMODULE.headerExpand = 40;
 PSUCHATMODULE.forceheaderopenExpand = 40;
 PSUCHATMODULE.forceheaderoffExpand = 40;
@@ -653,12 +653,7 @@ PSUCHATMODULE.almostTriggerChat = function() {
    if ($(".chat-frame").length > 0) this.hideChatUnderbar();
  } else {
    // assign focus to first invalid form element
-   for (let i = 0; document.querySelectorAll('.chat_underbarInput').length; i++) {
-     if (document.querySelectorAll('.chat_underbarInput')[i].className.indexOf('invalid')>-1) {
-       document.querySelectorAll('.chat_underbarInput')[i].focus();
-       break;
-     }
-   }
+   document.querySelector(".chat_controls_invalid").focus()
  }
 };
 
@@ -669,6 +664,7 @@ PSUCHATMODULE.loadTreatJS = function() {
 PSUCHATMODULE.loadStyle = function() {
 
  var cStyle = document.createElement("style");
+
  var faLink = document.createElement("link");
  var gfLink = document.createElement("link");
 
@@ -726,7 +722,7 @@ PSUCHATMODULE.validateFields = function() {
      $(this).addClass("chat_controls_invalid");
 
      $('#' + this.id + '-err-icon').css('display','block');
-
+     //
      if ($('.req')[index]) {
        $('.req')[index].setAttribute( 'aria-label', $('.req')[index].textContent.replace('*','') + ' is required.');
      }
@@ -747,6 +743,7 @@ PSUCHATMODULE.validateFields = function() {
 
 }
 
+// ensures clickable modal-openers have clear purpose and state
 PSUCHATMODULE.toggleModalAriaLabel = function (bool) {
   let stateLabels = ['Expand','Collapse'];
   let ariaText = $('.chat_headerText')[0] ?
@@ -764,15 +761,17 @@ PSUCHATMODULE.toggleModalAriaLabel = function (bool) {
   }
 };
 
+// ensures user can't tab into fields of collapsed modal
 PSUCHATMODULE.toggleFieldsTabIndex = function (bool) {
   let thisIndex = bool ? '0' : '-1';
   $('.chat_tabIndex').attr('tabindex', thisIndex);
 };
 
+// ensures screen reader can't read elements of collapsed modal
 PSUCHATMODULE.toggleFieldsReaderVisibility = function (bool) {
   let inputTypeAtts = ['hidden','text'];
   let selectDisplayProps = ['none','block'];
-  let submitTypeAtts= ['hidden','button'];
+  let submitTypeAtts = ['hidden','button'];
 
   if (bool) {
     inputTypeAtts.reverse();
