@@ -8,7 +8,7 @@ PSUCHATMODULE.formExpand = 205;
 PSUCHATMODULE.formExpand_noChat = 236;// changed from 128 -- D8 change
 PSUCHATMODULE.formExpand_AddEmail = 260; //Expand Toaster for Email Message
 PSUCHATMODULE.formExpand_AddField = 282; //Expand Toaster for Addtl Fields
-PSUCHATMODULE.formExpand_remodelOffset = 66;//base additional ertical space for revision 12/21
+PSUCHATMODULE.formExpand_remodelOffset = 66;//base additional vertical space for revision 12/21
 PSUCHATMODULE.headerExpand = 40;
 PSUCHATMODULE.forceheaderopenExpand = 40;
 PSUCHATMODULE.forceheaderoffExpand = 40;
@@ -173,7 +173,7 @@ PSUCHATMODULE.teamSettings = {
    showSBGradField : false,
    chatteamactive : false,
    forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderoffExpand : 40,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
 
@@ -186,7 +186,7 @@ PSUCHATMODULE.teamSettings = {
    showSBGradField : false,
    chatteamactive : false,
    forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderoffExpand : 40,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
  FA: { team: "FA", offerNoChat_text: "Contact Financial Aid", offerChat_text: "Chat with Financial Aid",
@@ -207,7 +207,7 @@ PSUCHATMODULE.teamSettings = {
    showSBGradField : false,
    chatteamactive : true,
    forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderoffExpand : 40,
    timerURL: "/Media/static/timer/chatTimer_M-R_Normal.aspx"
    },
  SFS: { team: "SFS", offerNoChat_text: "Chat with Student Financial Services", offerChat_text: "Chat with Student Financial Services",
@@ -217,8 +217,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 62,
+   forceheaderoffExpand : 62,
    timerURL: "/Media/static/timer/chatTimerSFS.aspx"
    },
  EAPEER: { team: "EAPEER", offerNoChat_text: "Chat with PSU Education Abroad", offerChat_text: "Chat with PSU Education Abroad",
@@ -229,7 +229,7 @@ PSUCHATMODULE.teamSettings = {
    showSBGradField : false,
    chatteamactive : true,
    forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderoffExpand : 40,
    timerURL: "/Media/static/timer/chatTimerEDPEER.aspx"
    },
  TAPS: { team: "TAPS", offerNoChat_text: "Chat with PSU Parking and Transportation", offerChat_text: "Chat with PSU Parking and Transportation",
@@ -239,8 +239,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 62,
+   forceheaderoffExpand : 62,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
  HR: { team: "HR", offerNoChat_text: "Office of Human Resources", offerChat_text: "Chat with Office of Human Resources",
@@ -250,8 +250,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 62,
+   forceheaderoffExpand : 62,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
  REG: { team: "REG", offerNoChat_text: "Registrar's Office", offerChat_text: "Chat with the Registrar's Office!",
@@ -262,7 +262,7 @@ PSUCHATMODULE.teamSettings = {
    showSBGradField : false,
    chatteamactive : true,
    forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderoffExpand : 40,
    timerURL: "/Media/static/timer/chatTimer_M-R_Normal.aspx"
    },
  Transfer: { team: "Transfer", offerNoChat_text: "Career and Transfer Centers Front Office", offerChat_text: "Chat with the Career and Transfer Centers Office!",
@@ -272,8 +272,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 62,
+   forceheaderoffExpand : 62,
    timerURL: "/Media/static/timer/chatTimer_M-R_Normal.aspx"
    },
  Career: { team: "Career", offerNoChat_text: "Career and Transfer Centers Front Office", offerChat_text: "Chat with the Career and Transfer Centers Office!",
@@ -283,8 +283,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 62,
+   forceheaderoffExpand : 62,
    timerURL: "/Media/static/timer/chatTimer_M-R_Normal.aspx"
    },
  CLASDEAN: { team: "CLASDEAN", offerNoChat_text: "CLAS Dean Office", offerChat_text: "Chat with the CLAS Dean Office!",
@@ -295,7 +295,7 @@ PSUCHATMODULE.teamSettings = {
    showSBGradField : false,
    chatteamactive : true,
    forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderoffExpand : 40,
    timerURL: "/Media/static/timer/chatTimer.aspx"
    },
  CLASESM: { team: "CLASESM", offerNoChat_text: "Environmental Science & Management Office", offerChat_text: "Chat with the Environmental Science & Management Office!",
@@ -306,8 +306,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 50,
-   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 62,
+   forceheaderoffExpand : 62,
    timerURL: "/Media/static/timer/chatTimerCLASESM.aspx"
    },
  CUPAPA: { team: "CUPAPA", offerNoChat_text: "Public Administration", offerChat_text: "Chat with Public Administration!",
@@ -318,7 +318,7 @@ PSUCHATMODULE.teamSettings = {
    showSBGradField : false,
    chatteamactive : true,
    forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderoffExpand : 40,
    timerURL: "/Media/static/timer/chatTimerCUPAPA.aspx"
    },
  SBGRAD: { team: "SBGRAD", offerNoChat_text: "Graduate Business Programs", offerChat_text: "Chat with Graduate Business Programs!",
@@ -328,8 +328,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : true,
    chatteamactive : true,
-   forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 62,
+   forceheaderoffExpand : 62,
    timerURL: "/Media/static/timer/chatTimerSBGrad.aspx"
    },
  GDI: { team: "GDI", offerNoChat_text: "Global Diversity & Inclusion", offerChat_text: "Chat with us! How may we assist you?",
@@ -339,8 +339,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 62,
+   forceheaderoffExpand : 62,
    timerURL: "/Media/static/timer/chatTimerGDI.aspx"
    },
  APPLIEDLING: { team: "APPLIEDLING", offerNoChat_text: "Applied Linguistics", offerChat_text: "Chat with Applied Linguistics Dept.",
@@ -350,8 +350,8 @@ PSUCHATMODULE.teamSettings = {
    showIDField : false,
    showSBGradField : false,
    chatteamactive : true,
-   forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderopenExpand : 62,
+   fforceheaderoffExpand : 62,
    timerURL: "/Media/static/timer/chatTimerAPPLIEDLING.aspx"
    },
  QRC: { team: "QRC", offerNoChat_text: "Queer Resource Center", offerChat_text: "Chat with Queer Resource Center",
@@ -362,7 +362,7 @@ PSUCHATMODULE.teamSettings = {
    showSBGradField : false,
    chatteamactive : true,
    forceheaderopenExpand : 40,
-   forceheaderopenExpand : 40,
+   forceheaderoffExpand : 40,
    timerURL: "/Media/static/timer/chatTimerQRC.aspx"
    }
 };
@@ -722,7 +722,7 @@ PSUCHATMODULE.validateFields = function() {
      $(this).addClass("chat_controls_invalid");
 
      $('#' + this.id + '-err-icon').css('display','block');
-     //
+
      if ($('.req')[index]) {
        $('.req')[index].setAttribute( 'aria-label', $('.req')[index].textContent.replace('*','') + ' is required.');
      }
@@ -743,7 +743,7 @@ PSUCHATMODULE.validateFields = function() {
 
 }
 
-// ensures clickable modal-openers have clear purpose and state
+
 PSUCHATMODULE.toggleModalAriaLabel = function (bool) {
   let stateLabels = ['Expand','Collapse'];
   let ariaText = $('.chat_headerText')[0] ?
@@ -761,13 +761,13 @@ PSUCHATMODULE.toggleModalAriaLabel = function (bool) {
   }
 };
 
-// ensures user can't tab into fields of collapsed modal
+
 PSUCHATMODULE.toggleFieldsTabIndex = function (bool) {
   let thisIndex = bool ? '0' : '-1';
   $('.chat_tabIndex').attr('tabindex', thisIndex);
 };
 
-// ensures screen reader can't read elements of collapsed modal
+
 PSUCHATMODULE.toggleFieldsReaderVisibility = function (bool) {
   let inputTypeAtts = ['hidden','text'];
   let selectDisplayProps = ['none','block'];
@@ -790,7 +790,7 @@ PSUCHATMODULE.toggleFieldsReaderVisibility = function (bool) {
 PSUCHATMODULE.getRenderedHeaderHeight = function () {
   const chat_header = $('.chat_header')[0]
   const chat_header_styles = (chat_header) ? window.getComputedStyle( chat_header ) : null
-  const chat_header_height = (chat_header) ? chat_header_styles.getPropertyValue('height') : 30
+  const chat_header_height = (chat_header) ? chat_header_styles.getPropertyValue('height') : 40
   return Number(chat_header_height.replace('px',''))
 };
 
@@ -809,7 +809,7 @@ PSUCHATMODULE.createChatElement = function() {
  var headerHeight = (headerTextToUse.length > 33) ? 62 : 40;
  PSUCHATMODULE.headerExpand = headerHeight;
  PSUCHATMODULE.forceheaderopenExpand = headerHeight;
- PSUCHATMODULE.forceheaderopenExpand = headerHeight;
+ PSUCHATMODULE.forceheaderoffExpand = headerHeight;
  offerBarHeader.style.height = headerHeight + 'px';
 
  offerBarHeader.innerHTML = "<div class=\"chat_close\"><a href=\"javascript:PSUCHATMODULE.showChatUnderbar()\"><span id=\"chat_icon_open\" aria-hidden=\"true\"><img src=\"https://crm.pdx.edu/Media/static/images/chevron-up.png\" alt=\"Open\" style=\"height:17px;width:19px;border:0px;margin:0px;padding:0px;\" /></span>"
@@ -930,7 +930,7 @@ PSUCHATMODULE.createChatElement = function() {
  underbar.appendChild(offerBar);
  document.body.appendChild(underbar);
 
- // by default, hide tab-able & readable elements; label the click-able elements
+ // start with tab-able & readable elements hidden; label the clickable header elements
  PSUCHATMODULE.toggleFieldsReaderVisibility(false);
  PSUCHATMODULE.toggleFieldsTabIndex(false);
  PSUCHATMODULE.toggleModalAriaLabel(false);

@@ -1,0 +1,50 @@
+<html>
+<head>
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portland State University</title>
+
+  <link rel="shortcut icon" href="https://content.oit.pdx.edu/nonprod/images/favicon.ico">
+
+  <link href="main.css" rel="stylesheet">
+
+</head>
+<body>
+  <div style="padding:2em;">
+    <p><span style="font-size:32px;">&laquo;&nbsp;</span><a href="index.html">back to index</a></p>
+    <h1>This is a test page for pdx.edu chat</h1>
+    <h2>It inherits style rules from pdx.edu</h2>
+    <p><a href="chattestFAplain.html">Financial Aid - plain layout - no pdx.edu styles</a></p>
+    <p><a href="chattestFA.html">Financial Aid - basic layout</a></p>
+    <p><a href="chattestFAoff.html">Financial Aid - after hours</a></p>
+    <p><a href="chattestTAPS.html">Transportation and Parking Services - long header</a></p>
+    <p><a href="chattestTAPSoff.html">Transportation and Parking Services - after hours</a></p>
+    <p><a href="chattestREG.html">Office of the Registrar - email footer on form</a></p>
+    <p><a href="chattestsbgrad.html">School of Business Graduate Programs - longer form</a></p>
+  </div>
+  <script src="PDX_ChatConfig_x.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  $(function(){
+  PSUCHATMODULE.forceOffHours = true;
+  PSUCHATMODULE.init();
+  });
+  $('body').keyup(function (e) {
+      var code = e.keyCode || e.which;
+      if (code == '9') {
+        $('.focused-element').each(function () {
+          $(this).removeClass('focused-element');
+        });
+        $(':focus').addClass('focused-element');
+      }
+      $(document).on('click', function (event) {
+        if (!(event.target.classList.contains('focused-element'))) {
+          $('.focused-element').each(function () {
+            $(this).removeClass('focused-element');
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
