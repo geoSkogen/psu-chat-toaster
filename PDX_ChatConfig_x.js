@@ -691,7 +691,7 @@ PSUCHATMODULE.loadStyle = function() {
  ".chat_controls label{font-size:14px;color:#1d252d;display:block;float:none;width:auto;text-align:right;padding:0.33em 0.66em 0 0;margin-bottom:0;font-weight:600;min-width:100px;max-width:100px;}\n" +
  ".chat_controls_inner { padding-top:3px;max-width:160px;min-width:160px; }\n" +
  ".chat_controls_invalid {border:solid 2px red;}\n" +
- ".chat_underbarInput,.chat_controls select {width:100%;color:#1d252d;font-size:13px;font-weight:600;opacity:0.8;padding:0.15em 0.5em;}\n" +
+ ".chat_underbarInput,.chat_controls select {width:100%;color:#1d252d;font-size:13px;font-weight:600;opacity:0.8;padding:0.15em 0.5em;box-sizing:border-box;}\n" +
  ".chat_controls select {padding:0.25em;}\n" +
  ".chat_req_asterisk {color:#1d252d;vertical-align:baselin;font-size:12px;}\n" +
  "input#btnStart2 {color:#ffffff;font-weight:800;border-width:0px;background-color:#6a7f10;width:auto;font-size:16px;height:auto;padding:0.5em 1.75em;margin:2em 0;border-radius:0 0 0 0;}\n" +
